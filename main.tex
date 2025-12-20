@@ -1,0 +1,315 @@
+\documentclass[12pt,a4paper]{article}
+
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, bm}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{
+  left=3cm,
+  right=3cm,
+  top=3cm,
+  bottom=3cm
+}
+
+\onehalfspacing
+
+
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\title{\textbf{The Cosmic Engine}\\
+\large Fundamentos Magnetohidrodinámicos de la Acreción y la Eyección Relativista}
+\author{ }
+\date{ }
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% =========================================================
+\section{Fundamentos de la Magnetohidrodinámica Ideal}
+% =========================================================
+
+La Magnetohidrodinámica (MHD) proporciona el marco teórico fundamental para describir la interacción entre campos magnéticos y plasmas conductores en sistemas astrofísicos. En este capítulo se introducen los principios físicos y matemáticos que permiten entender cómo un campo magnético inicialmente débil puede ejercer un control dinámico sobre discos de acreción, preparando el terreno para el estudio de la inestabilidad magnetorrotacional en el Capítulo~3.
+
+% ---------------------------------------------------------
+\subsection{La unión entre Mecánica de Fluidos y Electromagnetismo}
+% ---------------------------------------------------------
+
+La MHD puede entenderse, siguiendo a Davidson, como una teoría efectiva que emerge de la combinación de la Mecánica de Fluidos clásica con el Electromagnetismo de Maxwell.
+\\\\
+Desde la parte hidrodinámica, el plasma se modela como un fluido continuo caracterizado por campos macroscópicos: densidad de masa $\rho(\vect{x},t)$, velocidad del fluido $\vect{u}(\vect{x},t)$ y presión escalar $p(\vect{x},t)$.Esta descripción hidrodinámica es válida siempre que exista una clara separación entre las escalas microscópicas del plasma y las escalas macroscópicas del sistema, de modo que las cantidades físicas relevantes puedan definirse como promedios locales continuos. En particular, se requiere que la longitud libre media de las partículas y las escalas cinéticas asociadas sean mucho menores que las escalas características de variación espacial y temporal del flujo, lo que permite ignorar la dinámica individual de las partículas y trabajar con campos macroscópicos bien definidos.
+\\\\
+Asimismo, se asume que el plasma es cuasi-neutro a escalas macroscópicas, lo que implica que las separaciones locales de carga quedan confinadas a escalas del orden de la longitud de Debye y no influyen en la dinámica global. 
+\\\\
+Además necesitamos que el plasma sea colisionalmente eficiente o, de forma más general, que exista algún mecanismo físico que asegure un equilibrio termodinámico local. Bajo esta hipótesis, la distribución de velocidades puede aproximarse por una distribución cercana a la Maxwelliana, lo que permite definir una presión escalar bien definida y cerrar el sistema de ecuaciones con un número finito de momentos.
+\\\\
+Se supone también que la presión es aproximadamente isotrópica, lo que implica que las anisotropías asociadas al campo magnético o a trayectorias preferentes han sido suprimidas por colisiones, turbulencia u otros procesos de dispersión. Esta condición permite representar la presión mediante un escalar y evita la introducción de tensores de presión anisótropos.
+\\\\
+Finalmente, se considera que las velocidades características del flujo son no relativistas, de modo que los efectos relativistas pueden despreciarse en la formulación de las ecuaciones de conservación y en el acoplamiento con el Electromagnetismo.
+\\\\
+Por el lado electromagnético, el punto de partida son las ecuaciones de Maxwell:
+\begin{align}
+\nabla \cdot \vect{E} &= \frac{\rho_e}{\varepsilon_0}  , \\
+\nabla \cdot \vect{B} &= 0, \\
+\nabla \times \vect{E} &= -\frac{\partial \vect{B}}{\partial t} \label{eq:maxwell_faraday}, \\
+\nabla \times \vect{B} &= \mu_0 \vect{J} + \mu_0 \varepsilon_0 \frac{\partial \vect{E}}{\partial t}. \label{eq:maxwell_ampere}
+\end{align}
+
+Por las condiciones de cuasi-neutralidad y régimen no relativista podemos anular los términos 
+\begin{equation}
+\rho_e \approx 0  \textit{  y  } \mu_0 \varepsilon_0 \partial \vect{E}/\partial t\approx 0
+\end{equation}
+
+ Bajo estas hipótesis, la ley de Ampère se simplifica y el Electromagnetismo queda dominado por la interacción entre corrientes inducidas y campos magnéticos.
+
+% ---------------------------------------------------------
+\subsection{La ecuación de inducción magnética}
+% ---------------------------------------------------------
+
+
+
+De acuerdo con las hipótesis del modelo MHD, el movimiento del fluido es no
+relativista. Bajo esta suposición, es posible describir localmente el campo
+electromagnético en el sistema de referencia que se mueve con el fluido, empleando
+una transformación galileana con velocidad $\vect{u}$.
+
+Denotando con un primo las magnitudes medidas en el marco del fluido, las
+transformaciones galileanas de los campos electromagnéticos toman la forma:
+\begin{align}
+\vect{B}' &= \vect{B}, \\
+\vect{J}' &= \vect{J}, \\
+\vect{E}' &= \vect{E} + \frac{1}{c}\, \vect{u} \times \vect{B}.
+\end{align}
+
+Dado que el plasma se comporta como un fluido conductor, la corriente eléctrica es
+impulsada por el campo eléctrico medido en el marco del fluido. Para establecer una
+relación constitutiva entre la corriente y el campo eléctrico, se introduce la
+siguiente hipótesis.
+
+\medskip
+\noindent
+\textbf{Hipótesis (Ley de Ohm en el marco del fluido).}
+Se adopta la forma más simple de la relación corriente--campo, consistente con el
+modelo magnetohidrodinámico de un solo fluido, asumiendo una conductividad escalar
+constante:
+\begin{equation}
+\vect{J}' = \sigma \vect{E}'.
+\label{eq:ohm_fluid}
+\end{equation}
+
+Sustituyendo la transformación galileana del campo eléctrico en la expresión
+(\ref{eq:ohm_fluid}), se obtiene la ley de Ohm expresada en el sistema de referencia
+del laboratorio:
+\begin{equation}
+\vect{E} = \frac{\vect{J}}{\sigma} - \frac{1}{c}\, \vect{u} \times \vect{B}.
+\label{eq:ohm_lab}
+\end{equation}
+
+
+Sustituyendo las ecuaciones (\ref{eq:ohm_lab}) y (\ref{eq:maxwell_ampere}) en la
+ecuación de Faraday~(\ref{eq:maxwell_faraday}), se obtiene:
+\begin{equation}
+\frac{\partial \vect{B}}{\partial t}
+=
+\nabla \times (\vect{u} \times \vect{B})
+- \frac{1}{\mu_0 \sigma}\, \nabla \times (\nabla \times \vect{B}).
+\end{equation}
+
+\medskip
+\noindent
+\textbf{ Usando la Identidad vectorial:}
+\begin{equation}
+\nabla \times (\nabla \times \vect{B})
+=
+\nabla (\nabla \cdot \vect{B}) - \nabla^2 \vect{B}.
+\end{equation}
+
+Dado que $\nabla \cdot \vect{B} = 0$, condición impuesta por la ecuación de Maxwell
+correspondiente, el primer término se anula. Definiendo la difusividad magnética
+\begin{equation}
+\eta \equiv \frac{1}{\mu_0 \sigma},
+\end{equation}
+se obtiene finalmente la ecuación de inducción magnética:
+\begin{equation}
+\boxed{
+\frac{\partial \vect{B}}{\partial t}
+=
+\nabla \times (\vect{u} \times \vect{B})
++ \eta \nabla^2 \vect{B}
+}
+\label{eq:induction}
+\end{equation}
+
+% ---------------------------------------------------------
+\subsection{El teorema de Alfv\'en y el concepto de flujo congelado}
+% ---------------------------------------------------------
+
+Una de las consecuencias más profundas de la ecuación de inducción magnética es el
+denominado \textit{teorema de Alfv\'en}, también conocido como el principio de
+\textit{flujo congelado}. Este teorema establece que, en el régimen de MHD ideal, las
+líneas de campo magnético se mueven conjuntamente con el fluido conductor, como si
+estuvieran ``congeladas'' en él.
+
+El punto de partida es la ecuación de inducción magnética,
+ecuación~(\ref{eq:induction}). En el límite de conductividad infinita,
+$\sigma \rightarrow \infty$, la difusividad magnética $\eta$ tiende a cero y la
+ecuación se reduce a:
+\begin{equation}
+\frac{\partial \vect{B}}{\partial t}
+=
+\nabla \times (\vect{u} \times \vect{B}).
+\label{eq:induction_ideal}
+\end{equation}
+
+Consideremos ahora una superficie material $S(t)$ que se mueve con el fluido,
+delimitada por un contorno cerrado $C(t)$. El flujo magnético a través de dicha
+superficie se define como
+\begin{equation}
+\Phi_B(t) = \int_{S(t)} \vect{B} \cdot \mathrm{d}\vect{S}.
+\end{equation}
+
+Utilizando el teorema de transporte
+de Reynolds para una superficie material, se obtiene:
+\begin{equation}
+\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
+=
+\int_{S(t)} \frac{\partial \vect{B}}{\partial t} \cdot \mathrm{d}\vect{S}
++
+\int_{S(t)} \nabla \cdot (\vect{u}\vect{B}) \cdot \mathrm{d}\vect{S}
+-
+\int_{S(t)} (\vect{B}\cdot\nabla)\vect{u} \cdot \mathrm{d}\vect{S}.
+\end{equation}
+
+Sustituyendo la ecuación de inducción ideal (\ref{eq:induction_ideal}) y empleando
+identidades vectoriales triviales, la expresión anterior puede reorganizarse como:
+\begin{equation}
+\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
+=
+\int_{S(t)} \left[
+\nabla \times (\vect{u} \times \vect{B})
+- \nabla \times (\vect{u} \times \vect{B})
+\right] \cdot \mathrm{d}\vect{S}.
+\end{equation}
+
+Por lo tanto, se obtiene inmediatamente:
+\begin{equation}
+\frac{\mathrm{d}\Phi_B}{\mathrm{d}t} = 0.
+\end{equation}
+
+Este resultado establece que, en MHD ideal, el flujo magnético a través de cualquier
+superficie material permanece constante en el tiempo. En consecuencia, las líneas de
+campo magnético son transportadas por el fluido y conservan su conectividad
+topológica.
+
+Desde un punto de vista físico, las líneas de campo se comportan como entidades
+materiales: pueden estirarse y deformarse por el movimiento del plasma, pero no
+romperse ni reconectarse mientras la resistividad sea despreciable. Este principio
+constituye la base conceptual del transporte de momento angular en discos de
+acreción y de la inestabilidad magnetorrotacional.
+\\\\
+\textbf{Número de Reynolds magnético.}
+
+El grado de validez del régimen de flujo congelado puede cuantificarse mediante el
+\textit{número de Reynolds magnético},
+\begin{equation}
+R_m \equiv \frac{U L}{\eta},
+\end{equation}
+donde $U$ y $L$ son escalas características de velocidad y longitud del sistema,
+respectivamente, y $\eta$ es la difusividad magnética.
+
+Cuando $R_m \gg 1$, el término advectivo de la ecuación de inducción domina sobre la
+difusión resistiva, justificando la validez del régimen de flujo congelado. En el
+límite ideal, $R_m \rightarrow \infty$, la reconexión magnética queda suprimida a
+escalas macroscópicas.
+
+En los discos de acreción astrofísicos considerados en este trabajo se alcanzan
+valores extremadamente grandes de $R_m$, por lo que la aproximación de MHD ideal es
+adecuada a escala global.
+
+
+% ---------------------------------------------------------
+\subsection{El tensor de tensiones magnéticas y la fuerza \texorpdfstring{$\vect{J} \times \vect{B}$}{JxB}}
+% ---------------------------------------------------------
+
+En Magnetohidrodinámica, la interacción del campo magnético con la corriente eléctrica produce fuerzas que actúan sobre el plasma. Estas fuerzas aparecen de forma natural en la ecuación de momento:
+\begin{equation}
+\rho \frac{\mathrm{d}\vect{u}}{\mathrm{d}t} = -\nabla p + \vect{J} \times \vect{B},
+\end{equation}
+donde $\vect{J} \times \vect{B}$ es la fuerza de Lorentz por unidad de volumen.
+
+Para entender su estructura, es útil reescribirla mediante el **tensor de tensiones magnéticas**, también llamado **Maxwell stress tensor**. Recordando la ley de Ampère en el régimen no relativista:
+\begin{equation}
+\vect{J} = \frac{1}{\mu_0} \nabla \times \vect{B},
+\end{equation}
+y usando la identidad vectorial
+\begin{equation}
+(\nabla \times \vect{B}) \times \vect{B} = (\vect{B} \cdot \nabla) \vect{B} - \frac{1}{2} \nabla B^2,
+\end{equation}
+se puede escribir:
+\begin{equation}
+\vect{J} \times \vect{B} = \frac{1}{\mu_0} \left[ (\vect{B} \cdot \nabla) \vect{B} - \frac{1}{2} \nabla B^2 \right].
+\label{eq:lorentz_tensor}
+\end{equation}
+
+Esta expresión muestra que la fuerza magnética tiene **dos contribuciones con interpretaciones físicas distintas**:
+
+\begin{enumerate}
+\item \textbf{Tensión magnética} (\textit{rubber band term}):
+\begin{equation}
+\vect{F}_\text{tension} = \frac{1}{\mu_0} (\vect{B} \cdot \nabla) \vect{B}.
+\end{equation}
+Actúa a lo largo de las líneas de campo, intentando mantenerlas rectas y resistiendo su estiramiento o curvatura. Se puede imaginar como un elástico que tiende a retraer la línea de campo si se deforma.
+
+\item \textbf{Presión magnética} (\textit{inflating balloon term}):
+\begin{equation}
+\vect{F}_\text{pressure} = - \nabla \left( \frac{B^2}{2 \mu_0} \right).
+\end{equation}
+Actúa perpendicularmente a las líneas de campo, como la presión de un gas, empujando el plasma hacia afuera donde la densidad de campo es mayor. Es responsable de la expansión del plasma en regiones de alta energía magnética.
+\end{enumerate}
+
+Combinando ambos términos, se puede formalizar mediante el **tensor de tensiones magnéticas**:
+\begin{equation}
+\mathsf{T}_{ij} = \frac{1}{\mu_0} \left( - \frac{1}{2} B^2 \delta_{ij} + B_i B_j \right),
+\end{equation}
+de modo que la fuerza de Lorentz se obtiene como la divergencia del tensor:
+\begin{equation}
+\vect{J} \times \vect{B} = \nabla \cdot \mathsf{T}.
+\end{equation}
+
+\medskip
+\noindent
+\textbf{Plasma beta.}
+
+La importancia relativa del campo magnético frente a la presión térmica del plasma
+se caracteriza mediante el parámetro adimensional \textit{plasma beta},
+\begin{equation}
+\beta \equiv \frac{p}{\displaystyle \frac{B^2}{2\mu_0}}.
+\end{equation}
+
+Cuando $\beta \gg 1$, la presión térmica domina energéticamente la dinámica del
+plasma, aunque el campo magnético puede seguir controlando la transferencia de
+momento angular mediante tensiones magnéticas. En el régimen opuesto, $\beta \ll 1$,
+la dinámica está directamente gobernada por el campo magnético.
+
+En los discos de acreción analizados en este trabajo se cumple típicamente
+$\beta > 1$, de modo que el campo magnético es energéticamente subdominante pero
+dinámicamente esencial, condición clave para el desarrollo de la inestabilidad
+magnetorrotacional.
+
+\end{document}
