@@ -40,7 +40,71 @@
 
 \tableofcontents
 \newpage
+% =========================================================
+\section{Introducción a la acreción: El problema del momento angular y por qué la viscosidad clásica falla}
+% =========================================================
 
+Los discos de acreción son objetos astrofísicos formados principalmente por gas que cuenta con un momento angular respecto a un objeto central de masa $M$ al que orbitan. Gracias a este momento angular, no todo el gas acaba cayendo al objeto y se queda orbitando, aplanándolo y dándole la forma de disco. Un ejemplo muy conocido es el disco de acreción que se forma en las estrellas T-Tauri en las primeras etapas de formación de una estrella. Para facilitar la visualización de este objeto se incluye la siguiente imagen. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Fotos/DA.jpg}
+    \caption{Disco de acreción de una estrella T-Tauri, la cual se encuentra en el centro}
+\end{figure} \\
+En las estrellas T-Tauri, el disco de acreción proporciona el material necesario para que la estrella siga ganando masa mediante el mecanismo de acreción. Esto plantea una problemática, ya que si el gas tiene suficiente momento angular como para orbitar la estrella, ¿cómo es posible que parte de ese material caiga a la estrella? Para ello es necesario que el gas pierda momento angular y así desplazarse hacia radios menores. Esto implica la existencia de mecanismos de transporte del momento angular dentro del disco.
+
+% ---------------------------------------------------------
+\subsection{El problema del momento angular}
+% ---------------------------------------------------------
+
+Vamos a considerar una partícula de gas del disco de acreción con masa $m$, velocidad $\vect{v}$ y una distancia al objeto que orbita $\vect{r}$.  Podemos calcular su momento angular del siguiente modo:
+\begin{equation}
+    \vect{L}=\vect{r}\times\vect{p}=\vect{r}\times(m\vect{v})
+\end{equation}
+La derivada temporal del momento angular es igual al torque, el cual podemos definir como:
+\begin{equation}
+    \vect{\tau}=\vect{r}\times\vect{F_{g}}
+\end{equation}
+Sin embargo, la fuerza gravitatoria es una fuerza central, por lo que podemos reescribirla como $\vect{F_{g}}=F(r)\vect{\hat{r}}$. Esto quiere decir que:
+\begin{equation}
+    \frac{d\vect{L}}{dt}=\vect{r}\times(F(r)\vect{\hat{r}})\xrightarrow{\vect{r}||\vect{\hat{r}}}\frac{d\vect{L}}{dt}=0
+\end{equation}
+Esto implica que $\vect{L}$ es un vector constante tanto en magnitud como en dirección y, por tanto, esta partícula de gas que estamos estudiando jamás podría ser acretada por el objeto central. Con lo cual, es necesario que exista un torque adicional externo que provoque que las partículas más cercanas al objeto central pierdan el suficiente momento angular para que sean acretadas y las partículas más exteriores lo ganen.
+
+% ---------------------------------------------------------
+\subsection{Viscosidad como torque}
+% ---------------------------------------------------------
+
+Como ya se concluyó en la última subsección, es necesario que exista una fuerza que permita que el fluido del disco pierda momento angular. Considerando un fluido clásico, esta fuerza viene de la llamada viscosidad molecular $\nu_{m}$, el cual surge de las colisiones e intercambio de la cantidad de movimiento del gas.
+\\\
+El tiempo característico en el que la viscosidad molecular actúa se define como:
+\begin{equation}
+    t_{\nu}=\frac{R^{2}}{\nu_{m}}
+\end{equation}
+Donde $R$ es el radio del disco de acreción. Para ver si esta viscosidad molecular es capaz de explicar la acreción, vamos a calcular $t_{\nu}$ y compararlo con el tiempo que dura esta fase de acreción usando de nuevo el ejemplo de las estrellas T-Tauri. 
+\\\
+Primero de todo, vamos a calcular el valor de la viscosidad molecular para el gas del disco. Esta viscosidad se puede calcular del siguiente modo:
+\begin{equation}
+    \nu_{m}=lc_{s}
+\end{equation}
+Donde $l$ es el recorrido libre medio de una partícula y $c_{s}$ es la velocidad del sonido. El recorrido libre medio se puede obtener como:
+\begin{equation}
+    l\sim\frac{1}{\sigma n}
+\end{equation}
+Siendo $n$ el número de partículas por unidad de volumen y $\sigma$ la sección eficaz. Teniendo en cuenta que, en su mayoría, los discos de acreción están formados por hidrógeno molecular ($H_{2}$) tenemos los siguiente valores: $n=10^{13}\,cm^{-3}$ y $\sigma=10^{-15}\,cm^{2}$. Con lo cual:
+\begin{equation}
+    l\sim100\,cm=1\,m
+\end{equation}
+Con esto y teniendo en cuenta que la velocidad del sonido es de $c_{s}=10^{3}\,m/s$ a unos $T=300\,K$, obtenemos el siguiente valor para la viscosidad molecular:
+\begin{equation}
+    \nu_{m}=lc_{s}=10^{3}m^{2}/s
+\end{equation}
+Los radios típicos de un disco de acreción en estrellas T-Tauri son de $R=1\,ua=1,49\cdot10^{11}\,m$. Entonces:
+\begin{equation}
+    t_{\nu}=\frac{R^{2}}{\nu_{m}}\sim2,22\cdot10^{19}\,s=7,04\cdot10^{11}\,yr
+\end{equation}
+Este es un tiempo enorme y, de hecho, es mayor a la edad del Universo, por lo que la viscosidad molecular clásica no puede explicar la formación de discos de acreción. Además, se sabe también que, en estos discos, el número de Reynolds es bastante elvado ($Re>10^{10}$), por lo que las fuerzas moleculares viscosas se pueden despreciar frente a las fuerzas inerciales.
+\\\
+Para explicar la acreción se han propuesto diferentes modelos basados que postulan una viscosidad efectiva basadas en otros fenómenos físicos como las turbulencias o las inestabilidades magnéticas. Hoy en día, el modelo más utilizado es el conocido como modelo $\alpha$ de Shakura-Sunyaev, donde la viscosidad se parametriza como $\nu=\alpha c_{s}H$. Siendo $H$ el espesor del disco y $\alpha$ es un parámetro menor a 1.
 % =========================================================
 \section{Fundamentos de la Magnetohidrodinámica Ideal}
 % =========================================================
