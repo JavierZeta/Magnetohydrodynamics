@@ -5,6 +5,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+
+
 \usepackage{amsmath, amssymb, bm}
 \usepackage{physics}
 \usepackage{geometry}
@@ -311,11 +313,11 @@ adecuada a escala global.
 \subsection{El tensor de tensiones magnéticas y la fuerza \texorpdfstring{$\vect{J} \times \vect{B}$}{JxB}}
 % ---------------------------------------------------------
 
-En Magnetohidrodinámica, la interacción del campo magnético con la corriente eléctrica produce fuerzas que actúan sobre el plasma. Estas fuerzas aparecen de forma natural en la ecuación de momento:
+En Magnetohidrodinámica, la interacción del campo magnético con la corriente eléctrica produce fuerzas que actúan sobre el plasma. Estas fuerzas las incluimos en la ecuación de momento:
 \begin{equation}
 \rho \frac{\mathrm{d}\vect{u}}{\mathrm{d}t} = -\nabla p + \vect{J} \times \vect{B},
 \end{equation}
-donde $\vect{J} \times \vect{B}$ es la fuerza de Lorentz por unidad de volumen.
+donde $\vect{J} \times \vect{B}$ es la fuerza de Lorentz por unidad de volumen y no estamos teniendo en cuenta el término gravitatorio.
 
 Para entender su estructura, es útil reescribirla mediante el **tensor de tensiones magnéticas**, también llamado **Maxwell stress tensor**. Recordando la ley de Ampère en el régimen no relativista:
 \begin{equation}
@@ -375,5 +377,353 @@ En los discos de acreción analizados en este trabajo se cumple típicamente
 $\beta > 1$, de modo que el campo magnético es energéticamente subdominante pero
 dinámicamente esencial, condición clave para el desarrollo de la inestabilidad
 magnetorrotacional.
+\section{Inestabilidad magnetorrotacional como Motor de la Acreción}
 
+% =========================================================
+\subsection{Introducción fenomenológica: el ``muelle magnético''}
+% =========================================================
+
+La inestabilidad magnetorrotacional (MRI) puede entenderse de forma
+intuitiva mediante una analogía introducida por Balbus y Hawley \cite{Balbus1991a}, que
+ilustra el papel fundamental de las tensiones magnéticas en discos de
+acreción en rotación diferencial.
+
+Consideremos dos parcelas de gas situadas en órbitas casi circulares a
+radios ligeramente distintos dentro del disco. En ausencia de campo
+magnético, ambas conservarían su momento angular específico y
+permanecerían en órbitas estables. Sin embargo, en el régimen de MHD
+ideal, las líneas de campo magnético están congeladas en el fluido, de
+modo que las parcelas quedan unidas por una línea de
+campo, análoga a un muelle elástico. La fuerza restauradora asociada a
+este muelle es la tensión magnética, descrita por el término
+$(\vect{B}\cdot\nabla)\vect{B}$.
+\\\\
+En un disco kepleriano, donde la velocidad angular es $\Omega(R)\propto R^{-3/2}$, la parcela
+interna orbita más rápido que la externa. Esta desunion cinemática
+estira la línea de campo, generando una tensión que ejerce un torque
+negativo sobre la parcela interna y positivo sobre la externa. Como
+consecuencia, la parcela interna pierde momento angular y migra hacia
+radios menores, mientras que la externa lo gana y se desplaza hacia
+radios mayores. Este desplazamiento aumenta aún más el estiramiento del
+campo, intensificando la tensión magnética y realimentando el proceso.
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=0.3\textwidth]{Fotos/MRI.png} % Reducido a 0.45 del ancho del texto
+    \caption{Representación esquemática de la inestabilidad magnetorrotacional (MRI). Las líneas de campo magnético verticales actúan como muelles elásticos que conectan parcelas de fluido a diferentes radios. Debido a la rotación diferencial ($\Omega$ decreciente con el radio), la línea de campo se estira, transfiriendo momento angular y provocando que la parcela interna caiga y la externa se aleje. Adaptado de Murphy (2014) \cite{Murphy2014}.}
+    \label{fig:mri_muelle}
+\end{figure}
+
+Este mecanismo de realimentación positiva constituye la esencia física
+de la MRI. La inestabilidad extrae energía de la rotación diferencial
+del disco y no requiere campos magnéticos intensos: basta un campo débil
+que acople regiones separadas radialmente sin rigidizar
+el fluido, esto último ocurre cuando el campo es demasiado intenso \cite{Ji2013}.
+
+% =========================================================
+\subsection{Estado de equilibrio del disco magnetizado}
+% =========================================================
+
+El análisis de la inestabilidad magnetorrotacional se realiza en torno a
+un estado de equilibrio idealizado. Consideramos un fluido conductor descrito
+por la MHD ideal, en rotación diferencial alrededor de un objeto central
+de masa $M$, utilizando coordenadas cilíndricas $(R,\phi,z)$.
+
+En el equilibrio no perturbado, el flujo es puramente azimutal,
+\begin{equation}
+\vect{u}_0 = R\,\Omega(R)\,\hat{\boldsymbol{\phi}},
+\end{equation}
+y la rotación está dominada por el potencial gravitatorio central,
+conduciendo a un perfil kepleriano,
+\begin{equation}
+\Omega(R) = \sqrt{\frac{GM}{R^3}},
+\end{equation}
+que satisface $\mathrm{d}\Omega/\mathrm{d}R < 0$, condición fundamental
+para el desarrollo de la MRI.
+
+El campo magnético de equilibrio se asume débil y con una componente
+vertical uniforme,
+\begin{equation}
+\vect{B}_0 = B_0\,\hat{\boldsymbol{z}},
+\end{equation}
+tal que el plasma se encuentra en el régimen $\beta \gg 1$. Consideramos el caso en el que por tanto el campo no altera el equilibrio hidrodinámico global, pero es
+dinámicamente relevante a través de las tensiones magnéticas.
+
+El estudio se simplifica adoptando un marco local co--rotante centrado
+en un radio $R_0$, conocido como \textit{shearing sheet} \cite{Hawley1991}. En este marco,
+las coordenadas son
+\begin{equation}
+x = R - R_0, \qquad y = R_0(\phi - \Omega_0 t),
+\end{equation}
+Estas son válidas bajo la hipótesis $|x| \ll R_0$. La coordenada $x$ describe
+desplazamientos radiales pequeños, mientras que $y$ representa
+desplazamientos azimutales medidos en un sistema que corota con el
+disco a la velocidad angular local $\Omega_0$.
+Estas nos permiten aproximar la rotación diferencial como un flujo de cizalla
+lineal,
+\begin{equation}
+\vect{u}_0 = - q\,\Omega_0\,x\,\hat{\boldsymbol{y}},
+\end{equation}
+donde
+\begin{equation}
+q \equiv - \left.\frac{\mathrm{d}\ln\Omega}{\mathrm{d}\ln R}\right|_{R_0},
+\end{equation}
+con $q=3/2$ para un disco kepleriano.
+
+% =========================================================
+\subsection{Análisis de estabilidad lineal}
+% =========================================================
+
+En esta sección se formaliza la intuición física introducida
+anteriormente mediante un análisis de estabilidad lineal de las
+ecuaciones de la magnetohidrodinámica ideal. El objetivo es determinar
+si pequeñas perturbaciones introducidas sobre el estado de equilibrio
+definido en la Sección~3.2 crecen o decaen con el tiempo.
+
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+
+Partimos de las ecuaciones ya desarrolladas anteriormente de la MHD ideal para un fluido
+incompresible:
+\begin{align}
+\nabla \cdot \vect{u} &= 0, \label{eq:incompresibilidad} \\
+\frac{\partial \vect{u}}{\partial t}
++
+(\vect{u}\cdot\nabla)\vect{u}
+&=
+-\frac{1}{\rho}\nabla p
+-
+\nabla \Phi
++
+\frac{1}{\mu_0\rho}
+\left[
+(\vect{B}\cdot\nabla)\vect{B}
+-
+\nabla\left(\frac{B^2}{2}\right)
+\right],
+\label{eq:momento} \\[4pt]
+\frac{\partial \vect{B}}{\partial t}
+&=
+\nabla \times (\vect{u} \times \vect{B}),
+\label{eq:induccion} \\[4pt]
+\nabla \cdot \vect{B} &= 0.
+\label{eq:divB}
+\end{align}
+Estas ecuaciones las evaluaremos en el marco local corotante definido en la
+Sección~3.2, donde la rotación diferencial del disco aparece como un
+flujo de cizalla lineal.
+
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+
+Introducimos pequeñas perturbaciones sobre el estado de equilibrio,
+\begin{align}
+\vect{u} &= \vect{u}_0 + \delta\vect{u}, \\
+\vect{B} &= \vect{B}_0 + \delta\vect{B}, \\
+p &= p_0 + \delta p,
+\end{align}
+y suponemos que las perturbaciones son suficientemente pequeñas como
+para despreciar términos de segundo orden.
+
+En el marco del \textit{shearing sheet}, y restringiéndonos a
+perturbaciones axisimétricas, se buscan soluciones en forma de modos
+normales,
+\begin{equation}
+\delta f(\vect{x},t) \propto e^{i(k_z z - \omega t)}.
+\end{equation}
+donde $k_z$ es el número de onda vertical y $\omega$ la frecuencia
+compleja del modo.
+
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+
+Linealizando las ecuaciones de movimiento e inducción en el sistema rotante (siguiendo a Balbus \& Hawley \cite{Balbus1991a}), se obtiene el siguiente sistema para las componentes radial y azimutal de las perturbaciones:
+\begin{align}
+-i\omega\,\delta u_x - 2\Omega_0\,\delta u_y
+&= -\frac{ik_z B_0}{\mu_0\rho}\,\delta B_x, \label{eq:lin_ux} \\
+-i\omega\,\delta u_y + (2-q)\Omega_0\,\delta u_x
+&= -\frac{ik_z B_0}{\mu_0\rho}\,\delta B_y, \label{eq:lin_uy} \\
+-i\omega\,\delta B_x &= ik_z B_0\,\delta u_x, \label{eq:lin_Bx} \\
+-i\omega\,\delta B_y &= ik_z B_0\,\delta u_y
+- q\Omega_0\,\delta B_x. \label{eq:lin_By}
+\end{align}
+
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+
+A partir de las ecuaciones de inducción
+(\ref{eq:lin_Bx}) y (\ref{eq:lin_By}) se obtiene directamente:
+\begin{align}
+\delta B_x &= \frac{k_z B_0}{\omega}\,\delta u_x, \label{eq:Bx_elim} \\
+\delta B_y &= \frac{k_z B_0}{\omega}\,\delta u_y
+- \frac{q\Omega_0}{\omega}\,\delta B_x. \label{eq:By_elim}
+\end{align}
+
+Sustituyendo (\ref{eq:Bx_elim}) en (\ref{eq:By_elim}), resulta:
+\begin{equation}
+\delta B_y =
+\frac{k_z B_0}{\omega}\,\delta u_y
+- \frac{q\Omega_0 k_z B_0}{\omega^2}\,\delta u_x.
+\label{eq:By_final}
+\end{equation}
+
+Introduciendo ahora estas expresiones en las ecuaciones de movimiento
+(\ref{eq:lin_ux}) y (\ref{eq:lin_uy}), y definiendo la velocidad de
+Alfvén
+\begin{equation}
+v_A \equiv \frac{B_0}{\sqrt{\mu_0\rho}},
+\end{equation}
+
+Sustituyendo \eqref{eq:Bx_elim} en \eqref{eq:lin_ux}:
+
+\begin{equation}
+-i\omega\,\delta u_x - 2\Omega_0\,\delta u_y
+= - i \frac{k_z^2 v_A^2}{\omega}\,\delta u_x .
+\end{equation}
+
+Multiplicando por $i\omega$:
+
+\begin{equation}
+(\omega^2 - k_z^2 v_A^2)\,\delta u_x
+- 2 i \Omega_0 \omega\,\delta u_y
+= 0 .
+\label{eq:sys1}
+\end{equation}
+
+Ahora sustituimos \eqref{eq:By_final} en \eqref{eq:lin_uy}:
+
+\begin{align}
+-i\omega\,\delta u_y + (2-q)\Omega_0\,\delta u_x
+&=
+- i \frac{k_z^2 v_A^2}{\omega}\,\delta u_y
++ \frac{q\Omega_0 k_z^2 v_A^2}{\omega^2}\,\delta u_x .
+\end{align}
+
+Multiplicando por $\omega^2$ y reordenando términos:
+
+\begin{equation}
+\left[(2-q)\Omega_0\omega^2
+- q\Omega_0 k_z^2 v_A^2\right]\delta u_x
++ \omega\left(k_z^2 v_A^2 - \omega^2\right)\delta u_y
+= 0 .
+\label{eq:sys2}
+\end{equation}
+
+Las ecuaciones \eqref{eq:sys1} y \eqref{eq:sys2} constituyen un sistema homogéneo
+para $(\delta u_x,\delta u_y)$. La condición de existencia de soluciones no
+triviales es que el determinante se anule:
+
+\begin{equation}
+\begin{vmatrix}
+\omega^2 - k_z^2 v_A^2
+&
+-2 i \Omega_0 \omega
+\\[6pt]
+(2-q)\Omega_0\omega^2 - q\Omega_0 k_z^2 v_A^2
+&
+\omega(k_z^2 v_A^2 - \omega^2)
+\end{vmatrix}
+= 0 .
+\end{equation}
+
+Tras una simplificación algebraica directa se obtiene la relación de dispersión (conforme a los resultados de Balbus \cite{Balbus2003} y Kulsrud \cite{Kulsrud2005}):
+
+\begin{equation}
+\omega^4
+- \omega^2\left(\kappa^2 + 2k_z^2 v_A^2\right)
++ k_z^2 v_A^2
+\left(
+k_z^2 v_A^2 + \frac{d\Omega^2}{d\ln R}
+\right)
+= 0 ,
+\end{equation}
+
+donde hemos definido la frecuencia epicíclica
+
+\begin{equation}
+\kappa^2 = 2(2-q)\Omega_0^2,
+\end{equation}
+
+y utilizado
+
+\begin{equation}
+\frac{d\Omega^2}{d\ln R} = -2q\Omega_0^2 .
+\end{equation}
+
+Esta es la relación de dispersión general de la inestabilidad
+magnetorrotacional para perturbaciones axisimétricas con propagación vertical.
+
+% Asegúrate de tener \usepackage{float} en el preámbulo
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Fotos/tasacrecimiento.png} 
+    \caption{Tasa de crecimiento normalizada $\gamma/\Omega$ de la MRI en función del número de onda vertical $k_z v_A/\Omega$ para un perfil kepleriano ($q=1.5$). La curva muestra el rango de inestabilidad donde $\omega^2 < 0$, alcanzando un máximo de $\gamma \approx 0.75\Omega$ y desapareciendo en el punto de corte por tensión magnética. Gráfica generada numéricamente de la relación de dispersión de Balbus \& Hawley (1991) \cite{Balbus1991a}.}
+    \label{fig:mri_grafica_propia}
+\end{figure}
+
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+
+La estabilidad del sistema está determinada por el signo de $\omega^2$.
+Si alguna de las soluciones de la ecuación de dispersión anterior satisface $\omega^2 < 0$, la frecuencia es puramente imaginaria y la perturbación crece exponencialmente con el tiempo.
+
+Analizando el término independiente de la relación de dispersión, se observa que el factor crítico es:
+\begin{equation}
+k_z^2 v_A^2 + \frac{\mathrm{d}\Omega^2}{\mathrm{d}\ln R}.
+\end{equation}
+
+Dado que $k_z^2 v_A^2 > 0$, la aparición de una raíz inestable ($\omega^2 < 0$) requiere necesariamente que:
+\begin{equation}
+\frac{\mathrm{d}\Omega^2}{\mathrm{d}R} < 0.
+\label{eq:condicion_mri}
+\end{equation}
+
+Esta condición, derivada originalmente por Balbus \& Hawley \cite{Balbus1991a}, es notablemente simple: cualquier flujo magnetizado en rotación diferencial cuya velocidad angular decrezca con el radio es inestable frente a la MRI, independientemente de la intensidad del campo, siempre que éste sea dinámicamente débil. 
+
+En particular, para un disco kepleriano, donde $\Omega \propto R^{-3/2}$, se cumple inequívocamente la condición \eqref{eq:condicion_mri}. Es importante notar que esta condición es mucho más restrictiva que el criterio de Rayleigh para estabilidad hidrodinámica ($\mathrm{d}(R^2\Omega)^2/\mathrm{d}R > 0$), lo que permite la existencia de turbulencia en sistemas que, de otro modo, serían estables.
+
+
+
+% ---------------------------------------------------------
+\subsubsection{El límite de campo débil y la paradoja de la MRI}
+% ---------------------------------------------------------
+
+Un rasgo notable de la inestabilidad magnetorrotacional es que no requiere campos magnéticos intensos para operar. De hecho, la condición de inestabilidad $\mathrm{d}\Omega/\mathrm{d}R < 0$ se cumple en prácticamente todos los discos de acreción astrofísicos.
+
+Esto conduce a una aparente paradoja: ¿cómo puede un campo magnéticamente débil desencadenar una inestabilidad dinámica tan eficiente? La clave reside en el papel de la tensión magnética. El campo actúa como un elemento elástico que conecta regiones del fluido en rotación diferencial, permitiendo la transferencia de momento angular.
+
+Si el campo es excesivamente intenso, la tensión magnética rigidiza el fluido (haciendo que la velocidad de Alfvén $v_A$ sea muy alta) y suprime los desplazamientos relativos; matemáticamente, esto ocurre cuando $k_z^2 v_A^2$ supera el valor absoluto del gradiente de velocidad angular. Por el contrario, si el campo es demasiado débil, el acoplamiento magnético resulta ineficiente. 
+
+La MRI opera en el régimen intermedio, donde el campo es dinámicamente relevante pero permite la deformación de las líneas de fuerza. Este régimen es el que se espera de forma natural en discos de acreción reales \cite{Kulsrud2005}.
+
+% ---------------------------------------------------------
+\subsection{Saturación no lineal y turbulencia MHD}
+% ---------------------------------------------------------
+
+El análisis presentado hasta ahora se basa en un tratamiento lineal. Sin embargo, la MRI conduce a un crecimiento exponencial rápido, rompiendo el régimen lineal en escalas temporales del orden del tiempo orbital, $\tau \sim \Omega_0^{-1}$.
+
+Una vez que las perturbaciones alcanzan amplitudes finitas, el sistema entra en un régimen no lineal de turbulencia magnetohidrodinámica (MHD). En este estado, el campo magnético es continuamente amplificado y distorsionado, manteniendo un transporte de momento angular estadísticamente estacionario \cite{Balbus2003}.
+
+
+
+La consecuencia física más importante de esta turbulencia es la aparición de esfuerzos de Maxwell:
+\begin{equation}
+T_{R\phi} \sim -\frac{B_R B_\phi}{\mu_0},
+\end{equation}
+que actúan como el mecanismo efectivo de transporte de momento angular que se buscaba en modelos fenomenológicos como el de Shakura \& Sunyaev. Estos esfuerzos permiten que la materia pierda momento angular y caiga hacia el objeto central, resolviendo de manera natural el problema de la viscosidad. 
+
+La MRI proporciona así un mecanismo autosostenido y robusto que conecta la dinámica microscópica del campo magnético con la evolución macroscópica del sistema de acreción \cite{Ji2013}.
+\newpage
+% =========================================================
+
+
+
+
+\bibliographystyle{plain} % O usa 'apalike' si prefieres (Autor, Año)
+\bibliography{referencias}
 \end{document}
+
