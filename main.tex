@@ -399,7 +399,7 @@ este muelle es la tensión magnética, descrita por el término
 $(\vect{B}\cdot\nabla)\vect{B}$.
 \\\\
 En un disco kepleriano, donde la velocidad angular es $\Omega(R)\propto R^{-3/2}$, la parcela
-interna orbita más rápido que la externa. Esta desunion cinemática
+interna orbita más rápido que la externa. Esta desunión cinemática
 estira la línea de campo, generando una tensión que ejerce un torque
 negativo sobre la parcela interna y positivo sobre la externa. Como
 consecuencia, la parcela interna pierde momento angular y migra hacia
@@ -456,7 +456,7 @@ x = R - R_0, \qquad y = R_0(\phi - \Omega_0 t),
 \end{equation}
 Estas son válidas bajo la hipótesis $|x| \ll R_0$. La coordenada $x$ describe
 desplazamientos radiales pequeños, mientras que $y$ representa
-desplazamientos azimutales medidos en un sistema que corota con el
+desplazamientos azimutales medidos en un sistema corrotante con el
 disco a la velocidad angular local $\Omega_0$.
 Estas nos permiten aproximar la rotación diferencial como un flujo de cizalla
 lineal,
@@ -509,7 +509,7 @@ incompresible:
 \nabla \cdot \vect{B} &= 0.
 \label{eq:divB}
 \end{align}
-Estas ecuaciones las evaluaremos en el marco local corotante definido en la
+Estas ecuaciones las evaluaremos en el marco local corrotante definido en la
 Sección~3.2, donde la rotación diferencial del disco aparece como un
 flujo de cizalla lineal.
 
@@ -717,6 +717,105 @@ T_{R\phi} \sim -\frac{B_R B_\phi}{\mu_0},
 que actúan como el mecanismo efectivo de transporte de momento angular que se buscaba en modelos fenomenológicos como el de Shakura \& Sunyaev. Estos esfuerzos permiten que la materia pierda momento angular y caiga hacia el objeto central, resolviendo de manera natural el problema de la viscosidad. 
 
 La MRI proporciona así un mecanismo autosostenido y robusto que conecta la dinámica microscópica del campo magnético con la evolución macroscópica del sistema de acreción \cite{Ji2013}.
+\section{De la acreción a la eyección}
+Hasta ahora hemos visto que la MRI es capaz de explicar cómo el gas cae al objeto central que orbita, a pesar de que el campo magnético es, inicialmente, débil, local y desordenado. Sin embargo, en algunos de estos objetos astrofísicos se forman los llamados jets de acreción. Estos jets expulsan grandes cantidades de materia interestelar al espacio. No obstante, para que estos jets se formen, es necesario tener un campo magnético coherente a gran escala. Entonces, ¿cómo puede un disco de acreción dominado por la turbulencia MHD generar un campo magnético coherente a gran escala? Pues bien, en la siguiente subección trataremos de resolver esta problemática.
+
+% =========================================================
+\subsection{La turbulencia MRI como un dinamo rápido}
+% =========================================================
+
+De manera general, el mecanismo de funcionamiento de un dinamo nos permite transformar energía mecánica en magnética. Una manera sencilla de entender cómo la turbulencia actúa como un dinamo rápido (un dinamo rápido es un dinamo que gira a altas revoluciones) es mediante el llamado mencanismo Stretch-Twist-Fold (STF) introducido por el físico bieloruso Yákov Zeldóvich. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Fotos/STF.png}
+    \caption{Mecanismo Stretch-Twist-Fold}
+\end{figure}
+Este modelo refleja de una manera muy clara las claves necesarias para que un dinamos sea eficiente. Estas claves son:
+\begin{description}
+    \item[1.] Estiramiento del campo magnético por el cizallamiento del flujo.
+    \item[2.] La necesidad de movimientos tridimensionales que eviten cancelaciones por el retorcimiento del flujo.
+    \item[3.] Porcesos difusivos para hacer el ciclo irreversible.
+\end{description}
+Teniendo esto en cuenta, la amplificación del campo magnético que es inicialmente débil, se produce en escalas temporales comparables al tiempo dinámico del flujo, el tiempo en el que las propiedades del fluido cambian.
+
+Todas estas características están presentes en la turbulencia generada por la MRI, por lo que se le puede considerar un dinamo rápido a la turbulencia MRI capaz de amplificar los campos magnéticos de manera eficiente.
+
+% =========================================================
+\subsection{Descripción del campo medio y generación de campos a gran escala}
+% =========================================================
+
+La teoría de dinamos de campo medio pemite entender cómo los campos magnéticos grandes y coherentes pueden generarse a partir de la interacción de campos turbulentos más pequeños.
+
+En una primera instancia, Eugene Parker propuso la idea de que un campo magnético poloidal que surja ia partir de las fuerzas de Coriolis, las cuales pueden convertir un campo toroidal en poloidal, se podía describir introduciendo un término en la ecuación de inducción.
+\begin{equation}
+    \frac{\partial\langle\vect{B}_{p}\rangle}{\partial t}=\vect{\nabla}\times(\alpha\langle\vect{B}_{tor}\rangle+\dots)
+\end{equation}
+Esto solo es aplicable a los campos medios porque la fuerza electromagnética inducida ($\vect{u}\times\vect{B}$) nunca tendría una componente paralela al campo magneético. Recordemos que en la teoría de campos medios, las variables se descomponen en la suma del valor y de las fluctuaciones, al igual que en los flujos turbulentos. Así:
+\begin{align*} 
+    &\vect{u}=\langle\vect{u}\rangle+\vect{u}' &\vect{B}=\langle\vect{B}\rangle+\vect{B}'
+\end{align*}
+Entonces, tomando el promedio de la ecuación de la inducción tenemos
+\begin{equation}
+     \frac{\partial\langle\vect{B}\rangle}{\partial t}=\vect{\nabla}\times(\langle\vect{u}\rangle\times\langle\vect{B}\rangle+\langle\vect{\epsilon}\rangle-\eta\langle\vect{J}\rangle)
+\end{equation}
+Donde $\langle\vect{\epsilon}\rangle=\langle\vect{u}'\times\vect{B}'\rangle$ es la fuerza electromotriz media y $\eta\langle\vect{J}\rangle$ es el término resistivo que surge simplemente de que $\nabla\times B=J$. Ahora, nuestro objetivo es encontrar una forma para $\langle\vect{\epsilon}\rangle$. Para ello, vamos a asumir que $\langle\vect{\epsilon}\rangle$ se puede expresar en potencias de los gradientes del campo magnético medio.
+\begin{equation*}
+    \epsilon_{i}=\alpha_{ij}(\hat{\vect{g}},\hat{\vect{\Omega}},\langle\vect{B}\rangle,\dots)\langle B_{j}\rangle+\beta_{ijk}(\hat{\vect{g}},\hat{\vect{\Omega}},\langle\vect{B}\rangle,\dots)\frac{\partial \langle B_{j}\rangle}{\partial x_{j}}
+\end{equation*}
+Donde $\alpha_{ij}$ y $\beta_{ijk}$ son los coeficientes de transporte turbulento, los cuales dependen de la estratificación, velocidad angular y módulo del campo magnético medio. Los puntos de la ecuación indican que los coeficientes también podrían depender de relaciones que involucren la escala pequeña del campo magnético. Es posible calcular estos coeficientes y seguir desarrollando la expresión, pero por simplicidad vamos a proporcionar la expresión final para $\langle\vect{\epsilon}\rangle$.
+\begin{equation}
+    \langle\vect{\epsilon}\rangle=\alpha\langle\vect{B}\rangle-\beta_{t}\langle\vect{J}\rangle
+\end{equation}
+En contextos astrofísicos, generalmente interesan las soluciones en geometrías esféricas o en discos.
+
+Las dinamos de campo medio se dividen tradicionalmente en dos grupos. Dinamos $\alpha\Omega$ y dinamos $\alpha^{2}$. El efecto se refiere a la amplificación del campo toroidal por cizallamiento (es decir, rotación diferencial). Dicho cizallamiento ocurre de forma natural en las galaxias de disco, ya que son sistemas de rotación diferencial. Sin embargo, también es necesario regenerar el campo poloidal. Los campos magnéticos a gran escala pueden generarse únicamente por el efecto $\alpha^{2}$, por lo que también el campo toroidal debe generarse por este efecto.
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Fotos/c.png}
+    \caption{Regeneración mutua de campos poloidales y toroidales en el caso del $\alpha\Omega$ dinamo (izquierda) y del $\alpha^{2}$ dinamo (derecha).}
+\end{figure}
+Para ilustralos vamos a considerar la forma más simple de las ecuaciones de dinamo de campo medio axisimétricas apropiadas para un disco delgado.
+\begin{align*}
+    &\langle\dot{\vect{B}}_{R}\rangle=-(\alpha\langle\vect{B}_{\phi}\rangle)'+\beta_{T} \langle\vect{B}_{R}\rangle'' &\langle\dot{\vect{B}}_{\phi}\rangle=S\langle\vect{B}_{R}\rangle+\beta_{T} \langle\vect{B}_{\phi}\rangle''
+\end{align*}
+Donde los $'$ representan derivadas respecto a $z$, el punto representa derivadas temporales, $\alpha=\alpha_{0}f_{\alpha}(z)$ es un perfil axisimétrico para $\alpha$ y $S=Rd\Omega/dR$ es la cizalladura radial en el disco. En este contexto se pueden definir dos parámetros adimensionales.
+\begin{align*}
+    &C_{\Omega}=\frac{Sh^{2}}{\beta_{T}} &C_{\alpha}=\frac{\alpha_{0}h}{\beta_{T}}
+\end{align*}
+Donde $h$ es una medida de la altura del disco. Estos parámetros miden la intensidad de los efectos de la cizalladura y de $\alpha$. 
+
+En general $|C_{\Omega}|\gg C_{\alpha}$. La generación de soluciones axisimétricas por el dinamo está controlada por un parámetro llamado número dinamo
+\begin{equation}
+    D=C_{\Omega}C_{\alpha}
+\end{equation}
+El crecimiento exponencial del campo magnético viene mediado por este parámetro. Cuando $|D|>D_{crit}$ sucede este crecimiento exponencial.
+
+A partir del crecimiento exponencial del campo toroidal, por el efecto $\alpha^{2}$ este campo hace crecer también el campo poloidal. Es precisamente este campo el que provoca la aparición de los jets en los discos de acreción.
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\linewidth]{Fotos/a.png}
+    \caption{Jets en la dirección poloidal en el disco de acreción de un agujero negro}
+\end{figure}
+
+
+% =========================================================
+\subsection{Simulaciones y jets}
+% =========================================================
+
+Cuando la teoría de dinamos se aplicó a los discos de acreción, inicialmente se consideraba un ejemplo más de los numerosos cuerpos astrofísicos que albergan dinamos. Sin embargo, con el descubrimiento de la inestabilidad magneto-rotacional se hizo evidente que los campos magnéticos son esenciales para sostener la turbulencia en los discos de acreción. Esto da lugar a un sistema autoexcitado en el que el campo magnético necesario para la MRI puede regenerarse continuamente mediante la acción del dinamo.
+
+Simulaciones numéricas han mostrado que este sistema puede funcionar como un dinamo a pequeña escala si no existe estratificación vertical y como un dinamo de gran escala cuando hay estratificación. Estas simulaciones también permiten identificar efectos como el efecto $\alpha$ que, como hemos visto, interviene en la regeneración de campos magnéticos a gran escala.
+
+Desde el punto de vista astrofísico, la presencia de campos magnéticos de gran escala es fundamental para los outflows observados en todos los discos de acreción. La aceleración magnetocentrífuga es uno de los mecanismos que puede impulsar estos flujos y los campos magnéticos responsables pueden provenir tanto del material arrastrado durante la formación del disco como de la propia acción del dinamo. Simulaciones tridimensionales de discos de acreción muestran que la MRI puede mantener un campo magnético estable y generar flujos de salida que se asocian directamente con la presencia de campos de gran escala en el disco. Particularmente, la componente vertical de estos campos contribuye significativamente al aumento del transporte angular efectivo, reflejado en valores típicos del parámetro de viscosidad $\alpha\approx0,1$ según el modelo de Shakura-Sunyaev.
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.58\linewidth]{Fotos/b.png}
+    \caption{Simulación de un outflow de un disco de acreción dinamoactivo impulsado por una combinación de presión y aceleración magnetocentrífuga}
+\end{figure}
+
 \newpage
 % =========================================================
 
@@ -726,4 +825,3 @@ La MRI proporciona así un mecanismo autosostenido y robusto que conecta la din�
 \bibliographystyle{plain} % O usa 'apalike' si prefieres (Autor, Año)
 \bibliography{referencias}
 \end{document}
-
