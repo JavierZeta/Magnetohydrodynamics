@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.21)  20 DEC 2025 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.21)  30 DEC 2025 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,26 +337,26 @@ LaTeX Info: Redefining \% on input line 11.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -415,16 +415,16 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 37.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -437,41 +437,88 @@ LaTeX Info: Redefining \% on input line 1.
 \openout4 = `main.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+<Fotos/DA.jpg, id=111, 1204.5pt x 1204.5pt>
+File: Fotos/DA.jpg Graphic file (type jpg)
+<use Fotos/DA.jpg>
+Package pdftex.def Info: Fotos/DA.jpg  used on input line 52.
+(pdftex.def)             Requested size: 170.71393pt x 170.70569pt.
+ [3 <./Fotos/DA.jpg>] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--67
+Underfull \hbox (badness 10000) in paragraph at lines 120--133
 
  []
 
-[3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 220--227
+[6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 286--293
 
  []
 
-[6] [7] [8] (main.aux
+[9] [10] [11]
+<Fotos/MRI.png, id=218, 258.36525pt x 219.219pt>
+File: Fotos/MRI.png Graphic file (type png)
+<use Fotos/MRI.png>
+Package pdftex.def Info: Fotos/MRI.png  used on input line 411.
+(pdftex.def)             Requested size: 128.0387pt x 108.63916pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--414
+
+ []
+
+[12 <./Fotos/MRI.png>] [13] [14] [15]
+<Fotos/tasacrecimiento.png, id=289, 578.16pt x 361.35pt>
+File: Fotos/tasacrecimiento.png Graphic file (type png)
+<use Fotos/tasacrecimiento.png>
+Package pdftex.def Info: Fotos/tasacrecimiento.png  used on input line 662.
+(pdftex.def)             Requested size: 234.73654pt x 146.70985pt.
+ [16 <./Fotos/tasacrecimiento.png>] [17]
+<Fotos/STF.png, id=318, 371.58826pt x 227.04825pt>
+File: Fotos/STF.png Graphic file (type png)
+<use Fotos/STF.png>
+Package pdftex.def Info: Fotos/STF.png  used on input line 730.
+(pdftex.def)             Requested size: 213.39568pt x 130.39235pt.
+ [18] [19 <./Fotos/STF.png>] [20]
+<Fotos/c.png, id=342, 373.99725pt x 156.585pt>
+File: Fotos/c.png Graphic file (type png)
+<use Fotos/c.png>
+Package pdftex.def Info: Fotos/c.png  used on input line 775.
+(pdftex.def)             Requested size: 320.0935pt x 134.02492pt.
+ [21 <./Fotos/c.png>]
+<Fotos/a.png, id=350, 237.2865pt x 236.68425pt>
+File: Fotos/a.png Graphic file (type png)
+<use Fotos/a.png>
+Package pdftex.def Info: Fotos/a.png  used on input line 798.
+(pdftex.def)             Requested size: 149.37958pt x 148.99991pt.
+ [22 <./Fotos/a.png>]
+<Fotos/b.png, id=358, 525.76425pt x 548.64975pt>
+File: Fotos/b.png Graphic file (type png)
+<use Fotos/b.png>
+Package pdftex.def Info: Fotos/b.png  used on input line 815.
+(pdftex.def)             Requested size: 247.53976pt x 258.31749pt.
+ [23 <./Fotos/b.png>] (main.bbl [24]) [25] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -480,20 +527,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A9C9C960EC700C75857263B29AB5731C;1561.
+(rerunfilecheck)             Checksum: 3CF79199E3D14B513DD9B3188EF907C8;5406.
  ) 
 Here is how much of TeX's memory you used:
- 14476 strings out of 474486
- 222831 string characters out of 5753570
- 1936542 words of memory out of 5000000
- 36509 multiletter control sequences out of 15000+600000
+ 14700 strings out of 474486
+ 226411 string characters out of 5753570
+ 1938542 words of memory out of 5000000
+ 36634 multiletter control sequences out of 15000+600000
  581515 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,898b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (8 pages, 205647 bytes).
+ 79i,11n,93p,984b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\javie\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (25 pages, 1724497 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 796 PDF objects out of 1000 (max. 8388607)
+ 142 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

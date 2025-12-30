@@ -1,6 +1,19 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Fundamentos de la Magnetohidrodinámica Ideal}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}La unión entre Mecánica de Fluidos y Electromagnetismo}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}La ecuación de inducción magnética}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}El teorema de Alfv\'en y el concepto de flujo congelado}{5}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}El tensor de tensiones magnéticas y la fuerza $\bm {J} \times \bm {B}$}{7}{subsection.1.4}%
+\contentsline {section}{\numberline {1}Introducción a la acreción: El problema del momento angular y por qué la viscosidad clásica falla}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}El problema del momento angular}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Viscosidad como torque}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Fundamentos de la Magnetohidrodinámica Ideal}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}La unión entre Mecánica de Fluidos y Electromagnetismo}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}La ecuación de inducción magnética}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}El teorema de Alfv\'en y el concepto de flujo congelado}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}El tensor de tensiones magnéticas y la fuerza $\bm {J} \times \bm {B}$}{10}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Inestabilidad magnetorrotacional como Motor de la Acreción}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introducción fenomenológica: el ``muelle magnético''}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Estado de equilibrio del disco magnetizado}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Análisis de estabilidad lineal}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}El límite de campo débil y la paradoja de la MRI}{17}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Saturación no lineal y turbulencia MHD}{18}{subsection.3.4}%
+\contentsline {section}{\numberline {4}De la acreción a la eyección}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}La turbulencia MRI como un dinamo rápido}{18}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Descripción del campo medio y generación de campos a gran escala}{19}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulaciones y jets}{22}{subsection.4.3}%

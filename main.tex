@@ -106,7 +106,7 @@ Los radios típicos de un disco de acreción en estrellas T-Tauri son de $R=1\,u
 \end{equation}
 Este es un tiempo enorme y, de hecho, es mayor a la edad del Universo, por lo que la viscosidad molecular clásica no puede explicar la formación de discos de acreción. Además, se sabe también que, en estos discos, el número de Reynolds es bastante elvado ($Re>10^{10}$), por lo que las fuerzas moleculares viscosas se pueden despreciar frente a las fuerzas inerciales.
 \\\
-Para explicar la acreción se han propuesto diferentes modelos basados que postulan una viscosidad efectiva basadas en otros fenómenos físicos como las turbulencias o las inestabilidades magnéticas. Hoy en día, el modelo más utilizado es el conocido como modelo $\alpha$ de Shakura-Sunyaev, donde la viscosidad se parametriza como $\nu=\alpha c_{s}H$. Siendo $H$ el espesor del disco y $\alpha$ es un parámetro menor a 1.
+Para explicar la acreción se han propuesto diferentes modelos basados que postulan una viscosidad efectiva basadas en otros fenómenos físicos como las turbulencias o las inestabilidades magnéticas. Hoy en día, el modelo más utilizado es el conocido como modelo $\alpha$ de Shakura-Sunyaev \cite{Shakura1973}., donde la viscosidad se parametriza como $\nu=\alpha c_{s}H$. Siendo $H$ el espesor del disco y $\alpha$ es un parámetro menor a 1.
 % =========================================================
 \section{Fundamentos de la Magnetohidrodinámica Ideal}
 % =========================================================
@@ -117,7 +117,7 @@ La Magnetohidrodinámica (MHD) proporciona el marco teórico fundamental para de
 \subsection{La unión entre Mecánica de Fluidos y Electromagnetismo}
 % ---------------------------------------------------------
 
-La MHD puede entenderse, siguiendo a Davidson, como una teoría efectiva que emerge de la combinación de la Mecánica de Fluidos clásica con el Electromagnetismo de Maxwell.
+La MHD puede entenderse, siguiendo a Davidson \cite{Davidson2001}, como una teoría efectiva que emerge de la combinación de la Mecánica de Fluidos clásica con el Electromagnetismo de Maxwell.
 \\\\
 Desde la parte hidrodinámica, el plasma se modela como un fluido continuo caracterizado por campos macroscópicos: densidad de masa $\rho(\vect{x},t)$, velocidad del fluido $\vect{u}(\vect{x},t)$ y presión escalar $p(\vect{x},t)$.Esta descripción hidrodinámica es válida siempre que exista una clara separación entre las escalas microscópicas del plasma y las escalas macroscópicas del sistema, de modo que las cantidades físicas relevantes puedan definirse como promedios locales continuos. En particular, se requiere que la longitud libre media de las partículas y las escalas cinéticas asociadas sean mucho menores que las escalas características de variación espacial y temporal del flujo, lo que permite ignorar la dinámica individual de las partículas y trabajar con campos macroscópicos bien definidos.
 \\\\
@@ -150,7 +150,7 @@ Por las condiciones de cuasi-neutralidad y régimen no relativista podemos anula
 
 
 
-De acuerdo con las hipótesis del modelo MHD, el movimiento del fluido es no
+De acuerdo con las hipótesis del modelo MHD \cite{Freidberg2014}, el movimiento del fluido es no
 relativista. Bajo esta suposición, es posible describir localmente el campo
 electromagnético en el sistema de referencia que se mueve con el fluido, empleando
 una transformación galileana con velocidad $\vect{u}$.
@@ -225,9 +225,9 @@ se obtiene finalmente la ecuación de inducción magnética:
 % ---------------------------------------------------------
 \subsection{El teorema de Alfv\'en y el concepto de flujo congelado}
 % ---------------------------------------------------------
-
+ 
 Una de las consecuencias más profundas de la ecuación de inducción magnética es el
-denominado \textit{teorema de Alfv\'en}, también conocido como el principio de
+denominado \textit{teorema de Alfv\'en} \cite{Alfven1942},   también conocido como el principio de
 \textit{flujo congelado}. Este teorema establece que, en el régimen de MHD ideal, las
 líneas de campo magnético se mueven conjuntamente con el fluido conductor, como si
 estuvieran ``congeladas'' en él.
@@ -409,7 +409,7 @@ campo, intensificando la tensión magnética y realimentando el proceso.
 \begin{figure}[H] 
     \centering
     \includegraphics[width=0.3\textwidth]{Fotos/MRI.png} % Reducido a 0.45 del ancho del texto
-    \caption{Representación esquemática de la inestabilidad magnetorrotacional (MRI). Las líneas de campo magnético verticales actúan como muelles elásticos que conectan parcelas de fluido a diferentes radios. Debido a la rotación diferencial ($\Omega$ decreciente con el radio), la línea de campo se estira, transfiriendo momento angular y provocando que la parcela interna caiga y la externa se aleje. Adaptado de Murphy (2014) \cite{Murphy2014}.}
+    \caption{Representación esquemática de la inestabilidad magnetorrotacional (MRI). Las líneas de campo magnético verticales actúan como muelles elásticos que conectan parcelas de fluido a diferentes radios. Debido a la rotación diferencial ($\Omega$ decreciente con el radio), la línea de campo se estira, transfiriendo momento angular y provocando que la parcela interna caiga y la externa se aleje. Adaptado de Murphy (2014) \cite{Murphy2014}.} 
     \label{fig:mri_muelle}
 \end{figure}
 
@@ -449,7 +449,7 @@ tal que el plasma se encuentra en el régimen $\beta \gg 1$. Consideramos el cas
 dinámicamente relevante a través de las tensiones magnéticas.
 
 El estudio se simplifica adoptando un marco local co--rotante centrado
-en un radio $R_0$, conocido como \textit{shearing sheet} \cite{Hawley1991}. En este marco,
+en un radio $R_0$, conocido como \textit{shearing sheet} \cite{Hawley1991a}. En este marco,
 las coordenadas son
 \begin{equation}
 x = R - R_0, \qquad y = R_0(\phi - \Omega_0 t),
@@ -714,7 +714,7 @@ La consecuencia física más importante de esta turbulencia es la aparición de 
 \begin{equation}
 T_{R\phi} \sim -\frac{B_R B_\phi}{\mu_0},
 \end{equation}
-que actúan como el mecanismo efectivo de transporte de momento angular que se buscaba en modelos fenomenológicos como el de Shakura \& Sunyaev. Estos esfuerzos permiten que la materia pierda momento angular y caiga hacia el objeto central, resolviendo de manera natural el problema de la viscosidad. 
+que actúan como el mecanismo efectivo de transporte de momento angular que se buscaba en modelos fenomenológicos como el de Shakura \& Sunyaev \cite{Shakura1973}. Estos esfuerzos permiten que la materia pierda momento angular y caiga hacia el objeto central, resolviendo de manera natural el problema de la viscosidad. 
 
 La MRI proporciona así un mecanismo autosostenido y robusto que conecta la dinámica microscópica del campo magnético con la evolución macroscópica del sistema de acreción \cite{Ji2013}.
 \section{De la acreción a la eyección}
@@ -724,7 +724,7 @@ Hasta ahora hemos visto que la MRI es capaz de explicar cómo el gas cae al obje
 \subsection{La turbulencia MRI como un dinamo rápido}
 % =========================================================
 
-De manera general, el mecanismo de funcionamiento de un dinamo nos permite transformar energía mecánica en magnética. Una manera sencilla de entender cómo la turbulencia actúa como un dinamo rápido (un dinamo rápido es un dinamo que gira a altas revoluciones) es mediante el llamado mencanismo Stretch-Twist-Fold (STF) introducido por el físico bieloruso Yákov Zeldóvich. 
+De manera general, el mecanismo de funcionamiento de un dinamo nos permite transformar energía mecánica en magnética. Una manera sencilla de entender cómo la turbulencia actúa como un dinamo rápido (un dinamo rápido es un dinamo que gira a altas revoluciones) es mediante el llamado mecanismo Stretch-Twist-Fold (STF) \cite{Zeldovich1983} introducido por el físico bieloruso Yákov Zeldóvich. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{Fotos/STF.png}
@@ -744,7 +744,7 @@ Todas estas características están presentes en la turbulencia generada por la 
 \subsection{Descripción del campo medio y generación de campos a gran escala}
 % =========================================================
 
-La teoría de dinamos de campo medio pemite entender cómo los campos magnéticos grandes y coherentes pueden generarse a partir de la interacción de campos turbulentos más pequeños.
+La teoría de dinamos de campo medio \cite{Brandenburg2005} pemite entender cómo los campos magnéticos grandes y coherentes pueden generarse a partir de la interacción de campos turbulentos más pequeños.
 
 En una primera instancia, Eugene Parker propuso la idea de que un campo magnético poloidal que surja ia partir de las fuerzas de Coriolis, las cuales pueden convertir un campo toroidal en poloidal, se podía describir introduciendo un término en la ecuación de inducción.
 \begin{equation}
@@ -808,7 +808,7 @@ Cuando la teoría de dinamos se aplicó a los discos de acreción, inicialmente 
 
 Simulaciones numéricas han mostrado que este sistema puede funcionar como un dinamo a pequeña escala si no existe estratificación vertical y como un dinamo de gran escala cuando hay estratificación. Estas simulaciones también permiten identificar efectos como el efecto $\alpha$ que, como hemos visto, interviene en la regeneración de campos magnéticos a gran escala.
 
-Desde el punto de vista astrofísico, la presencia de campos magnéticos de gran escala es fundamental para los outflows observados en todos los discos de acreción. La aceleración magnetocentrífuga es uno de los mecanismos que puede impulsar estos flujos y los campos magnéticos responsables pueden provenir tanto del material arrastrado durante la formación del disco como de la propia acción del dinamo. Simulaciones tridimensionales de discos de acreción muestran que la MRI puede mantener un campo magnético estable y generar flujos de salida que se asocian directamente con la presencia de campos de gran escala en el disco. Particularmente, la componente vertical de estos campos contribuye significativamente al aumento del transporte angular efectivo, reflejado en valores típicos del parámetro de viscosidad $\alpha\approx0,1$ según el modelo de Shakura-Sunyaev.
+Desde el punto de vista astrofísico, la presencia de campos magnéticos de gran escala es fundamental para los outflows observados en todos los discos de acreción. La aceleración magnetocentrífuga es uno de los mecanismos que puede impulsar estos flujos y los campos magnéticos responsables pueden provenir tanto del material arrastrado durante la formación del disco como de la propia acción del dinamo. Simulaciones tridimensionales de discos de acreción muestran que la MRI puede mantener un campo magnético estable y generar flujos de salida que se asocian directamente con la presencia de campos de gran escala en el disco. Particularmente, la componente vertical de estos campos contribuye significativamente al aumento del transporte angular efectivo, reflejado en valores típicos del parámetro de viscosidad $\alpha\approx0,1$ según el modelo de Shakura-Sunyaev \cite{Shakura1973}.
 \newpage
 \begin{figure}[h]
     \centering

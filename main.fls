@@ -229,6 +229,13 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
 OUTPUT main.toc
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
+INPUT .\Fotos\DA.jpg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
@@ -238,6 +245,51 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss8.tfm
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\MRI.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\tasacrecimiento.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\STF.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\c.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\a.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\Fotos\b.png
+INPUT .\main.bbl
+INPUT .\main.bbl
+INPUT main.bbl
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -257,16 +309,28 @@ INPUT C:\Users\javie\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
 INPUT C:\Users\javie\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk
 INPUT C:\Users\javie\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk
 INPUT C:\Users\javie\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmmib8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmmib8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmss12.pfb
