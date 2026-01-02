@@ -1,12 +1,8 @@
 \documentclass[12pt,a4paper]{article}
 
-
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
-
-
 \usepackage{amsmath, amssymb, bm}
 \usepackage{physics}
 \usepackage{geometry}
@@ -18,30 +14,61 @@
 \usepackage{xcolor}
 
 \geometry{
-  left=3cm,
-  right=3cm,
+  left=2.5cm,
+  right=2.5cm,
   top=3cm,
   bottom=3cm
 }
 
 \onehalfspacing
 
-
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 
 \title{\textbf{The Cosmic Engine}\\
 \large Fundamentos Magnetohidrodinámicos de la Acreción y la Eyección Relativista}
-\author{ }
-\date{ }
+\author{Víctor Ávila Camargo\\José Ignacio Miguel Rodríguez\\Javier Zaragozano Calvo\\[12pt]
+Universidad de Alcalá\\
+Facultad de Ciencias\\
+Asignatura: Fluidos en Ambientes Planetarios y Espaciales}
+\date{\today}
 
 \begin{document}
 
-\maketitle
-\thispagestyle{empty}
-\newpage
+% Página de portada con imagen\begin{titlepage}
+    % Logo en esquina superior izquierda
+    \begin{center}
+        \includegraphics[height=3cm]{Fotos/uah_logo.png}
+    \end{center}
+    
+    \vspace*{1cm}
+    % Título principal
+    \begin{center}
+        {\Huge\bfseries The Cosmic Engine\par}
+        \vspace{0.5cm}
+        {\Large\bfseries Fundamentos Magnetohidrodinámicos de la \\ Acreción y la Eyección Relativista\par}
+        
+        \vspace{1cm}
+        \includegraphics[width=0.7\textwidth]{Fotos/portada.jpg}\par
+        
+        \vspace{0.5cm}
+        \small\itshape ``A ring-like accretion structure in M87 
+connecting its black hole and jet (2023) \cite{lu2023ring}, 
+    \end{center}
 
+    % Autores y afiliación
+    \begin{center}
+        {\large\textbf{Autores}}\par
+        Víctor Ávila Camargo \\
+        José Ignacio Miguel Rodríguez \\
+        Javier Zaragozano Calvo \\
+        \vspace{0.3cm}
+        \small Asignatura: Fluidos en Ambientes Planetarios y Espaciales \\
+        \small Departamento de Física y Matemáticas \\
+        \small \today
+    \end{center}
 \tableofcontents
 \newpage
+
 % =========================================================
 \section{Introducción a la acreción: El problema del momento angular y por qué la viscosidad clásica falla}
 % =========================================================
@@ -228,67 +255,64 @@ se obtiene finalmente la ecuación de inducción magnética:
  
 Una de las consecuencias más profundas de la ecuación de inducción magnética es el
 denominado \textit{teorema de Alfv\'en} \cite{Alfven1942},   también conocido como el principio de
-\textit{flujo congelado}. Este teorema establece que, en el régimen de MHD ideal, las
-líneas de campo magnético se mueven conjuntamente con el fluido conductor, como si
-estuvieran ``congeladas'' en él.
-
-El punto de partida es la ecuación de inducción magnética,
-ecuación~(\ref{eq:induction}). En el límite de conductividad infinita,
-$\sigma \rightarrow \infty$, la difusividad magnética $\eta$ tiende a cero y la
-ecuación se reduce a:
+\textit{flujo congelado}.  Este resultado establece que, en un fluido perfectamente
+conductor, el flujo magnético a través de cualquier superficie material se conserva
+en el tiempo. Este teorema es matemáticamente análogo al teorema de Kelvin siendo el campo magnético análogo a la vorticidad.
+\\\\
+Partimos de la ecuación de inducción magnética\eqref{eq:induction} en el límite de conductividad infinita,
+$\sigma \to \infty$, donde la difusividad magnética $\eta = 1/(\mu_0 \sigma)$ se anula:
 \begin{equation}
-\frac{\partial \vect{B}}{\partial t}
-=
-\nabla \times (\vect{u} \times \vect{B}).
-\label{eq:induction_ideal}
+\frac{\partial \mathbf{B}}{\partial t}
+= \nabla \times (\mathbf{u} \times \mathbf{B}).
+\label{eq:induccion_ideal}
 \end{equation}
 
-Consideremos ahora una superficie material $S(t)$ que se mueve con el fluido,
-delimitada por un contorno cerrado $C(t)$. El flujo magnético a través de dicha
-superficie se define como
+Consideremos una superficie material $S(t)$ que se mueve con el fluido, limitada por
+un contorno cerrado $C(t)$. El flujo magnético a través de dicha superficie se define
+como
 \begin{equation}
-\Phi_B(t) = \int_{S(t)} \vect{B} \cdot \mathrm{d}\vect{S}.
+\Phi_B(t) = \int_{S(t)} \mathbf{B} \cdot d\mathbf{S}.
 \end{equation}
 
-Utilizando el teorema de transporte
-de Reynolds para una superficie material, se obtiene:
+La derivada temporal del flujo magnético viene dada por
 \begin{equation}
-\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
-=
-\int_{S(t)} \frac{\partial \vect{B}}{\partial t} \cdot \mathrm{d}\vect{S}
-+
-\int_{S(t)} \nabla \cdot (\vect{u}\vect{B}) \cdot \mathrm{d}\vect{S}
--
-\int_{S(t)} (\vect{B}\cdot\nabla)\vect{u} \cdot \mathrm{d}\vect{S}.
+\frac{d\Phi_B}{dt}
+= \int_{S(t)} \frac{\partial \mathbf{B}}{\partial t} \cdot d\mathbf{S}
++ \oint_{C(t)} (\mathbf{u} \times \mathbf{B}) \cdot d\mathbf{l},
+\label{eq:flujo_general}
 \end{equation}
+donde el segundo término tiene en cuenta el movimiento del contorno $C(t)$ con
+velocidad $\mathbf{u}$.
 
-Sustituyendo la ecuación de inducción ideal (\ref{eq:induction_ideal}) y empleando
-identidades vectoriales triviales, la expresión anterior puede reorganizarse como:
-\begin{equation}
-\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
-=
-\int_{S(t)} \left[
-\nabla \times (\vect{u} \times \vect{B})
-- \nabla \times (\vect{u} \times \vect{B})
-\right] \cdot \mathrm{d}\vect{S}.
-\end{equation}
+Sustituyendo la ecuación de inducción ideal \eqref{eq:induccion_ideal} en el primer
+término y utilizando el teorema de Stokes, se obtiene
+\begin{align}
+\frac{d\Phi_B}{dt}
+&= \int_{S(t)} [\nabla \times (\mathbf{u} \times \mathbf{B})] \cdot d\mathbf{S}
++ \oint_{C(t)} (\mathbf{u} \times \mathbf{B}) \cdot d\mathbf{l} \\
+&= \oint_{C(t)} (\mathbf{u} \times \mathbf{B}) \cdot d\mathbf{l}
+- \oint_{C(t)} (\mathbf{u} \times \mathbf{B}) \cdot d\mathbf{l}.
+\end{align}
 
-Por lo tanto, se obtiene inmediatamente:
+Por tanto, ambos términos se cancelan exactamente y se obtiene
 \begin{equation}
-\frac{\mathrm{d}\Phi_B}{\mathrm{d}t} = 0.
+\frac{d\Phi_B}{dt} = 0.
 \end{equation}
 
 Este resultado establece que, en MHD ideal, el flujo magnético a través de cualquier
 superficie material permanece constante en el tiempo. En consecuencia, las líneas de
-campo magnético son transportadas por el fluido y conservan su conectividad
-topológica.
-
-Desde un punto de vista físico, las líneas de campo se comportan como entidades
-materiales: pueden estirarse y deformarse por el movimiento del plasma, pero no
-romperse ni reconectarse mientras la resistividad sea despreciable. Este principio
+campo magnético son transportadas por el fluido y conservan su conectividad.
+Las líneas de campo pueden estirarse y deformarse por el movimiento del plasma, pero la ruptura y la reconexión está fuertemente suprimida a escalas macroscópicas, pero no prohibida. Este principio
 constituye la base conceptual del transporte de momento angular en discos de
 acreción y de la inestabilidad magnetorrotacional.
-\\\\
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=0.5\textwidth]{Fotos/alfven.png} % Reducido a 0.45 del ancho del texto
+    \caption{Representación esquemática del teorema de Alfven} 
+    \label{alfven}
+\end{figure}
+
 \textbf{Número de Reynolds magnético.}
 
 El grado de validez del régimen de flujo congelado puede cuantificarse mediante el
@@ -319,7 +343,7 @@ En Magnetohidrodinámica, la interacción del campo magnético con la corriente 
 \end{equation}
 donde $\vect{J} \times \vect{B}$ es la fuerza de Lorentz por unidad de volumen y no estamos teniendo en cuenta el término gravitatorio.
 
-Para entender su estructura, es útil reescribirla mediante el **tensor de tensiones magnéticas**, también llamado **Maxwell stress tensor**. Recordando la ley de Ampère en el régimen no relativista:
+Para entender su estructura, es útil reescribirla mediante el tensor de tensiones magnéticas, también llamado Maxwell stress tensor. Recordando la ley de Ampère en el régimen no relativista:
 \begin{equation}
 \vect{J} = \frac{1}{\mu_0} \nabla \times \vect{B},
 \end{equation}
@@ -333,7 +357,7 @@ se puede escribir:
 \label{eq:lorentz_tensor}
 \end{equation}
 
-Esta expresión muestra que la fuerza magnética tiene **dos contribuciones con interpretaciones físicas distintas**:
+Esta expresión muestra que la fuerza magnética tiene dos contribuciones con interpretaciones físicas distintas:
 
 \begin{enumerate}
 \item \textbf{Tensión magnética} (\textit{rubber band term}):
@@ -349,7 +373,7 @@ Actúa a lo largo de las líneas de campo, intentando mantenerlas rectas y resis
 Actúa perpendicularmente a las líneas de campo, como la presión de un gas, empujando el plasma hacia afuera donde la densidad de campo es mayor. Es responsable de la expansión del plasma en regiones de alta energía magnética.
 \end{enumerate}
 
-Combinando ambos términos, se puede formalizar mediante el **tensor de tensiones magnéticas**:
+Combinando ambos términos, se puede formalizar mediante el tensor de tensiones magnéticas:
 \begin{equation}
 \mathsf{T}_{ij} = \frac{1}{\mu_0} \left( - \frac{1}{2} B^2 \delta_{ij} + B_i B_j \right),
 \end{equation}
@@ -384,7 +408,7 @@ magnetorrotacional.
 % =========================================================
 
 La inestabilidad magnetorrotacional (MRI) puede entenderse de forma
-intuitiva mediante una analogía introducida por Balbus y Hawley \cite{Balbus1991a}, que
+intuitiva mediante una analogía introducida por Balbus \& Hawley \cite{Balbus1991a}, que
 ilustra el papel fundamental de las tensiones magnéticas en discos de
 acreción en rotación diferencial.
 
@@ -671,17 +695,27 @@ magnetorrotacional para perturbaciones axisimétricas con propagación vertical.
 La estabilidad del sistema está determinada por el signo de $\omega^2$.
 Si alguna de las soluciones de la ecuación de dispersión anterior satisface $\omega^2 < 0$, la frecuencia es puramente imaginaria y la perturbación crece exponencialmente con el tiempo.
 
-Analizando el término independiente de la relación de dispersión, se observa que el factor crítico es:
+Analizando el término independiente de la relación de dispersión, se observa que el
+factor crítico es
 \begin{equation}
-k_z^2 v_A^2 + \frac{\mathrm{d}\Omega^2}{\mathrm{d}\ln R}.
+k_z^2 v_A^2 + \frac{d\Omega^2}{d\ln R}.
 \end{equation}
 
-Dado que $k_z^2 v_A^2 > 0$, la aparición de una raíz inestable ($\omega^2 < 0$) requiere necesariamente que:
+Dado que $k_z^2 v_A^2 > 0$, la existencia de una raíz inestable ($\omega^2 < 0$)
+requiere necesariamente que
 \begin{equation}
-\frac{\mathrm{d}\Omega^2}{\mathrm{d}R} < 0.
-\label{eq:condicion_mri}
+\frac{d\Omega^2}{d\ln R} < 0.
 \end{equation}
 
+Utilizando la identidad
+\begin{equation}
+\frac{d\Omega^2}{d\ln R} = 2\Omega R \frac{d\Omega}{dR},
+\end{equation}
+y dado que $\Omega > 0$ en discos de acreción, esta condición es equivalente a
+\begin{equation}
+\frac{d\Omega}{dR} < 0.
+\label{eq:condicion_mri}    
+\end{equation}
 Esta condición, derivada originalmente por Balbus \& Hawley \cite{Balbus1991a}, es notablemente simple: cualquier flujo magnetizado en rotación diferencial cuya velocidad angular decrezca con el radio es inestable frente a la MRI, independientemente de la intensidad del campo, siempre que éste sea dinámicamente débil. 
 
 En particular, para un disco kepleriano, donde $\Omega \propto R^{-3/2}$, se cumple inequívocamente la condición \eqref{eq:condicion_mri}. Es importante notar que esta condición es mucho más restrictiva que el criterio de Rayleigh para estabilidad hidrodinámica ($\mathrm{d}(R^2\Omega)^2/\mathrm{d}R > 0$), lo que permite la existencia de turbulencia en sistemas que, de otro modo, serían estables.
@@ -696,7 +730,7 @@ Un rasgo notable de la inestabilidad magnetorrotacional es que no requiere campo
 
 Esto conduce a una aparente paradoja: ¿cómo puede un campo magnéticamente débil desencadenar una inestabilidad dinámica tan eficiente? La clave reside en el papel de la tensión magnética. El campo actúa como un elemento elástico que conecta regiones del fluido en rotación diferencial, permitiendo la transferencia de momento angular.
 
-Si el campo es excesivamente intenso, la tensión magnética rigidiza el fluido (haciendo que la velocidad de Alfvén $v_A$ sea muy alta) y suprime los desplazamientos relativos; matemáticamente, esto ocurre cuando $k_z^2 v_A^2$ supera el valor absoluto del gradiente de velocidad angular. Por el contrario, si el campo es demasiado débil, el acoplamiento magnético resulta ineficiente. 
+Si el campo es excesivamente intenso, la tensión magnética rigidiza el fluido (haciendo que la velocidad de Alfvén $v_A$ sea muy alta) y suprime los desplazamientos relativos; matemáticamente, esto ocurre cuando $k_z^2 v_A^2$ supera el valor absoluto del gradiente de velocidad angular. 
 
 La MRI opera en el régimen intermedio, donde el campo es dinámicamente relevante pero permite la deformación de las líneas de fuerza. Este régimen es el que se espera de forma natural en discos de acreción reales \cite{Kulsrud2005}.
 
@@ -730,11 +764,11 @@ De manera general, el mecanismo de funcionamiento de un dinamo nos permite trans
     \includegraphics[width=0.5\linewidth]{Fotos/STF.png}
     \caption{Mecanismo Stretch-Twist-Fold}
 \end{figure}
-Este modelo refleja de una manera muy clara las claves necesarias para que un dinamos sea eficiente. Estas claves son:
+Este modelo refleja de una manera muy clara las claves necesarias para que una dinamo sea eficiente. Estas claves son:
 \begin{description}
     \item[1.] Estiramiento del campo magnético por el cizallamiento del flujo.
     \item[2.] La necesidad de movimientos tridimensionales que eviten cancelaciones por el retorcimiento del flujo.
-    \item[3.] Porcesos difusivos para hacer el ciclo irreversible.
+    \item[3.] Procesos difusivos para hacer el ciclo irreversible.
 \end{description}
 Teniendo esto en cuenta, la amplificación del campo magnético que es inicialmente débil, se produce en escalas temporales comparables al tiempo dinámico del flujo, el tiempo en el que las propiedades del fluido cambian.
 
@@ -746,11 +780,11 @@ Todas estas características están presentes en la turbulencia generada por la 
 
 La teoría de dinamos de campo medio \cite{Brandenburg2005} pemite entender cómo los campos magnéticos grandes y coherentes pueden generarse a partir de la interacción de campos turbulentos más pequeños.
 
-En una primera instancia, Eugene Parker propuso la idea de que un campo magnético poloidal que surja ia partir de las fuerzas de Coriolis, las cuales pueden convertir un campo toroidal en poloidal, se podía describir introduciendo un término en la ecuación de inducción.
+En una primera instancia, Eugene Parker propuso la idea de que un campo magnético poloidal que surja a partir de las fuerzas de Coriolis, las cuales pueden convertir un campo toroidal en poloidal, se podía describir introduciendo un término en la ecuación de inducción.
 \begin{equation}
     \frac{\partial\langle\vect{B}_{p}\rangle}{\partial t}=\vect{\nabla}\times(\alpha\langle\vect{B}_{tor}\rangle+\dots)
 \end{equation}
-Esto solo es aplicable a los campos medios porque la fuerza electromagnética inducida ($\vect{u}\times\vect{B}$) nunca tendría una componente paralela al campo magneético. Recordemos que en la teoría de campos medios, las variables se descomponen en la suma del valor y de las fluctuaciones, al igual que en los flujos turbulentos. Así:
+Esto solo es aplicable a los campos medios porque la fuerza electromagnética inducida ($\vect{u}\times\vect{B}$) nunca tendría una componente paralela al campo magnético. Recordemos que en la teoría de campos medios, las variables se descomponen en la suma del valor y de las fluctuaciones, al igual que en los flujos turbulentos. Así:
 \begin{align*} 
     &\vect{u}=\langle\vect{u}\rangle+\vect{u}' &\vect{B}=\langle\vect{B}\rangle+\vect{B}'
 \end{align*}
@@ -791,7 +825,7 @@ En general $|C_{\Omega}|\gg C_{\alpha}$. La generación de soluciones axisimétr
 \end{equation}
 El crecimiento exponencial del campo magnético viene mediado por este parámetro. Cuando $|D|>D_{crit}$ sucede este crecimiento exponencial.
 
-A partir del crecimiento exponencial del campo toroidal, por el efecto $\alpha^{2}$ este campo hace crecer también el campo poloidal. Es precisamente este campo el que provoca la aparición de los jets en los discos de acreción.
+A partir del crecimiento exponencial del campo toroidal, por el efecto $\alpha^{2}$ este campo hace crecer también el campo poloidal. Es precisamente este campo el que en gran parte provoca la aparición de los jets en los discos de acreción.
 \newpage
 \begin{figure}[h]
     \centering
@@ -804,7 +838,7 @@ A partir del crecimiento exponencial del campo toroidal, por el efecto $\alpha^{
 \subsection{Simulaciones y jets}
 % =========================================================
 
-Cuando la teoría de dinamos se aplicó a los discos de acreción, inicialmente se consideraba un ejemplo más de los numerosos cuerpos astrofísicos que albergan dinamos. Sin embargo, con el descubrimiento de la inestabilidad magneto-rotacional se hizo evidente que los campos magnéticos son esenciales para sostener la turbulencia en los discos de acreción. Esto da lugar a un sistema autoexcitado en el que el campo magnético necesario para la MRI puede regenerarse continuamente mediante la acción del dinamo.
+Cuando la teoría de dinamos se aplicó a los discos de acreción, inicialmente se consideraba un ejemplo más de los numerosos cuerpos astrofísicos que albergan dinamos. Sin embargo, con el descubrimiento de la inestabilidad magnetorotacional se hizo evidente que los campos magnéticos son esenciales para sostener la turbulencia en los discos de acreción. Esto da lugar a un sistema autoexcitado en el que el campo magnético necesario para la MRI puede regenerarse continuamente mediante la acción del dinamo.
 
 Simulaciones numéricas han mostrado que este sistema puede funcionar como un dinamo a pequeña escala si no existe estratificación vertical y como un dinamo de gran escala cuando hay estratificación. Estas simulaciones también permiten identificar efectos como el efecto $\alpha$ que, como hemos visto, interviene en la regeneración de campos magnéticos a gran escala.
 
